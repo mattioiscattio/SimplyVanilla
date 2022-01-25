@@ -1,0 +1,44 @@
+5feceb66ff - Last occurred: 2022-01-20 Occurrences: 1
+---- Context 1 ----
+Plan v5.4 build 1516
+Pufferfish git-Pufferfish-35 (MC: 1.18.1)
+Server v1.18.1-R0.1-SNAPSHOT
+
+class com.djrapitops.plan.delivery.export.ExportTask
+
+---- Stacktrace ----
+com.djrapitops.plan.exceptions.ExportException: Failed to export server: SimplyVanillaSMP (Attempts disabled until next reload), java.nio.file.AccessDeniedException: /../../../gitRepo
+   Plan-5.4-build-1516.jar//com.djrapitops.plan.delivery.export.Exporter.exportServerPage(Exporter.java:91)
+   Plan-5.4-build-1516.jar//com.djrapitops.plan.delivery.export.ExportScheduler.lambda$scheduleServerPageExport$2(ExportScheduler.java:113)
+   Plan-5.4-build-1516.jar//com.djrapitops.plan.delivery.export.ExportTask.run(ExportTask.java:45)
+   Plan-5.4-build-1516.jar//net.playeranalytics.plugin.scheduling.UnscheduledBukkitTask.run(UnscheduledBukkitTask.java:22)
+   org.bukkit.craftbukkit.v1_18_R1.scheduler.CraftTask.run(CraftTask.java:101)
+   org.bukkit.craftbukkit.v1_18_R1.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+   com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+   java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+   java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+   java.base/java.lang.Thread.run(Thread.java:833)
+Caused by:
+java.nio.file.AccessDeniedException: /../../../gitRepo
+   java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:90)
+   java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+   java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+   java.base/sun.nio.fs.UnixFileSystemProvider.createDirectory(UnixFileSystemProvider.java:398)
+   java.base/java.nio.file.Files.createDirectory(Files.java:700)
+   java.base/java.nio.file.Files.createAndCheckIsDirectory(Files.java:807)
+   java.base/java.nio.file.Files.createDirectories(Files.java:793)
+   Plan-5.4-build-1516.jar//com.djrapitops.plan.delivery.export.FileExporter.export(FileExporter.java:65)
+   Plan-5.4-build-1516.jar//com.djrapitops.plan.delivery.export.ServerPageExporter.exportResource(ServerPageExporter.java:257)
+   Plan-5.4-build-1516.jar//com.djrapitops.plan.delivery.export.ServerPageExporter.exportResources(ServerPageExporter.java:242)
+   Plan-5.4-build-1516.jar//com.djrapitops.plan.delivery.export.ServerPageExporter.exportRequiredResources(ServerPageExporter.java:200)
+   Plan-5.4-build-1516.jar//com.djrapitops.plan.delivery.export.ServerPageExporter.export(ServerPageExporter.java:95)
+   Plan-5.4-build-1516.jar//com.djrapitops.plan.delivery.export.Exporter.exportServerPage(Exporter.java:86)
+   Plan-5.4-build-1516.jar//com.djrapitops.plan.delivery.export.ExportScheduler.lambda$scheduleServerPageExport$2(ExportScheduler.java:113)
+   Plan-5.4-build-1516.jar//com.djrapitops.plan.delivery.export.ExportTask.run(ExportTask.java:45)
+   Plan-5.4-build-1516.jar//net.playeranalytics.plugin.scheduling.UnscheduledBukkitTask.run(UnscheduledBukkitTask.java:22)
+   org.bukkit.craftbukkit.v1_18_R1.scheduler.CraftTask.run(CraftTask.java:101)
+   org.bukkit.craftbukkit.v1_18_R1.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+   com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+   java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+   java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+   java.base/java.lang.Thread.run(Thread.java:833)
